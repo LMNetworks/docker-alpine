@@ -1,6 +1,6 @@
-FROM alpine:3.9.2
+FROM alpine:3.9.4
 
-LABEL org.alpine.version="3.9.2"
+LABEL org.alpine.version="3.9.4"
 LABEL image_name="lmnetworks/alpine"
 LABEL maintainer="info@lm-net.it"
 

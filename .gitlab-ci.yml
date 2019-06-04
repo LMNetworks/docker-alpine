@@ -2,6 +2,7 @@ stages:
   - lint
   - build
   - test
+  - cleanup
 
 Dockerfile lint:
   stage: lint
@@ -20,3 +21,9 @@ test:
   image: docker:stable
   script:
     - docker run --rm $CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA test -f /etc/alpine-release
+
+cleanup:
+  stage: cleanup
+  image: docker:stable
+  script:
+    - docker rmi $CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
